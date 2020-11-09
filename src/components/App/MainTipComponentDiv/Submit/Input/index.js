@@ -10,8 +10,8 @@ function Input() {
         console.log(newTip + " 10");
         const requestOptions = {
           method: `POST`,
-          headers: { accept: "application/json" },
-          body: newTip,
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ tip: newTip }),
         };
 
         const req = await fetch(
