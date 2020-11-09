@@ -2,26 +2,26 @@ import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import DisplayTip from "./DisplayTip";
 
-const dummyTip = { id: 1, contents: {translated: `don't be an arsehole` }};
+const dummyTip = { id: 1, contents: { translated: `don't be an arsehole` } };
 
 function MainTipComponentDiv() {
   const [tip, setTip] = useState("Hello");
-  const [clicked, setClicked] = useState(false)
+  const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
-    if(clicked){
-    async function getTip() {
-        const res = await fetch(`https://api.funtranslations.com/translate/yoda.json?text=Becky likes Pokemon`,
-          {
-            headers: { accept: "application/json" }
-          }
-        );
-        const data = await res.json();
-        console.log(data.contents.translated);
-        setTip(data.contents.translated);
+    if (clicked) {
+      async function getTip() {
+        const res = await fetch(`http://localhost:5000/randomTip`, {
+          headers: { accept: "application/json" },
+        });
+        const { data, success } = await res.json();
+        if (success) {
+          setTip(data[0].tip);
+        }
       }
       getTip();
-  }}, [clicked]);
+    }
+  }, [clicked]);
 
   function handleClick() {
     setClicked(!clicked);
