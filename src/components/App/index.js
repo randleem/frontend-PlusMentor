@@ -1,3 +1,4 @@
+import MainTipComponentDiv from "../MainTipComponentDiv";
 import "./App.css";
 
 function App() {
@@ -5,14 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>Happy Project Week</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          React Docs R Here
-        </a>
+        <MainTipComponentDiv />
       </header>
     </div>
   );
