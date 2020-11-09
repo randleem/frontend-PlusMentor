@@ -1,4 +1,5 @@
-import MainTipComponentDiv from "../MainTipComponentDiv";
+import MainTipComponentDiv from "./MainTipComponentDiv/Display";
+import Input from "./MainTipComponentDiv/Submit/Input"
 import "./App.css";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>Happy Project Week</p>
+        <Input />
         <MainTipComponentDiv />
       </header>
     </div>
