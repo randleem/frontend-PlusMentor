@@ -3,7 +3,9 @@ import React from "react";
 function Button({ handleClick }) {
   return (
     <div>
-      <button onClick={handleClick}>Get Tip!</button>
+      <button className="button is-primary is-large" onClick={handleClick}>
+        Get Tip!
+      </button>
     </div>
   );
 }
