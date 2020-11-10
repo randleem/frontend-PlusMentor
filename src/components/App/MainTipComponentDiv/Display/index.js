@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import DisplayTip from "./DisplayTip";
 
-const dummyTip = { id: 1, contents: { translated: `don't be an arsehole` } };
-
 function MainTipComponentDiv() {
-  const [tip, setTip] = useState("Hello");
+  const [tip, setTip] = useState("Your tips will be displayed here!");
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
@@ -20,6 +18,7 @@ function MainTipComponentDiv() {
         }
       }
       getTip();
+      setClicked(false);
     }
   }, [clicked]);
 

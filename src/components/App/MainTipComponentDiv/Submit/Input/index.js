@@ -38,9 +38,16 @@ function Input() {
   }
 
   return (
-    <div>
-      <input onChange={handleChange} placeholder="write tip here"></input>
-      <button onClick={handleClick}>Submit Tip</button>
+    <div style={{ display: "inline" }}>
+      <p>Share your knowledge by submitting your own tips:</p>
+      <input
+        className="input is-rounded"
+        onChange={handleChange}
+        placeholder="Add your tip here..."
+      ></input>
+      <button className="button is-ghost" onClick={handleClick}>
+        Submit Tip
+      </button>
     </div>
   );
 }
