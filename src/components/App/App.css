@@ -1,7 +1,36 @@
+body {
+  background: #282c34 !important;
+  min-height: 100vh;
+}
+
 .App {
   text-align: center;
-  background-color: #282c34;
 }
+
+/*NAVITATION START*/
+nav a {
+  display: inline-block;
+  text-transform: uppercase;
+  color: white !important;
+  padding: 5px;
+  font-size: 0.8em;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  transition: all 0.2s ease;
+  transform: translateY(3px) !important;
+}
+
+.is-active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+/*NAVITATION END*/
 
 .App-logo {
   height: 40vmin;
@@ -16,7 +45,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;

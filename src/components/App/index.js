@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from "react-router-dom";
 import MainTipComponentDiv from "./MainTipComponentDiv/Display";
 import Input from "./MainTipComponentDiv/Submit/Input";
 // Main CSS
@@ -16,24 +21,24 @@ function App() {
       <div className="App">
         <header className="App-header">
           <img
-            src="/images/plusMentor/plusMentor_gradient.png"
+            src="/images/plusMentor/plusMentor_gradient_resized.png"
             alt="plusMentor Logo"
             width="350"
           />
           <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/createTip">Create Tip</Link>
-              </li>
-            </ul>
+            <NavLink to="/">Home</NavLink>
+            &nbsp;
+            <NavLink to="/createTip">Create tip</NavLink>
+            &nbsp;
+            <NavLink to="/scheduleSession">Schedule a session</NavLink>
           </nav>
         </header>
 
         <Switch>
           <Route path="/createTip">
+            <Input />
+          </Route>
+          <Route path="/scheduleSession">
             <Input />
           </Route>
           <Route path="/">
