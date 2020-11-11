@@ -17,9 +17,13 @@ import Register from "../Form-Register";
 
 // FORM - Login
 // TODO: Add it here
+import Login from "../Form-login";
 
 // Introduction
 import Introduction from "../Introduction";
+
+// Interaction
+import Interaction from "../Interaction";
 
 // ----------------------------------------
 
@@ -45,9 +49,14 @@ function App() {
             <Input />
           </Route>
           <Route path="/scheduleSession"></Route>
-          <Route path="/login"></Route>
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/interaction">
+            <Interaction />
           </Route>
           <Route path="/">
             <Homepage />
