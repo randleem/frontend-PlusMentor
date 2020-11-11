@@ -1,5 +1,7 @@
-// import React, { useEffect, useState } from "react";
 import "./introduction.css";
+
+// Header
+import Header from "../App/Header";
 
 function Introduction() {
   const tipsForBootcampers = [
@@ -41,46 +43,49 @@ function Introduction() {
   ];
   return (
     <div>
-      <div className="checkListPaper">
-        <h4 className="title is-4">
-          For Bootcampers - here are some tips to get you started on your first
-          session.
-        </h4>
-        {tipsForBootcampers.map((el, i) => (
-          <div className="checkListItem">
-            <div className="field">
-              <input
-                className="is-checkradio is-medium is-circle is-block is-success"
-                id={i}
-                type="checkbox"
-                name={i}
-              />
-              <label for={i}>{el}</label>
+      <Header />
+      <main>
+        <div className="checkListPaper">
+          <h4 className="title is-4">
+            For Bootcampers - here are some tips to get you started on your
+            first session.
+          </h4>
+          {tipsForBootcampers.map((el, i) => (
+            <div className="checkListItem">
+              <div className="field">
+                <input
+                  className="is-checkradio is-medium is-circle is-block is-success"
+                  id={i}
+                  type="checkbox"
+                  name={i}
+                />
+                <label for={i}>{el}</label>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <br />
-      <br />
-      <div className="checkListPaper">
-        <h4 className="title is-4">
-          For Bootcampers - here are some tips to get you started on your first
-          session.
-        </h4>
-        {tipsForMentors.map((el, i) => (
-          <div className="checkListItem">
-            <div className="field">
-              <input
-                className="is-checkradio is-medium is-circle is-block is-success"
-                id={i}
-                type="checkbox"
-                name={i}
-              />
-              <label for={i}>{el}</label>
+          ))}
+        </div>
+        <br />
+        <br />
+        <div className="checkListPaper">
+          <h4 className="title is-4">
+            For Bootcampers - here are some tips to get you started on your
+            first session.
+          </h4>
+          {tipsForMentors.map((el, i) => (
+            <div className="checkListItem">
+              <div className="field">
+                <input
+                  className="is-checkradio is-medium is-circle is-block is-success"
+                  id={i * 3}
+                  type="checkbox"
+                  name={i * 3}
+                />
+                <label for={i * 3}>{el}</label>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </main>
     </div>
   );
 }

@@ -1,14 +1,13 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // ----------------------------------------
 
 ///// COMPONENTS
+
+// Homepage
+import Homepage from "./01_Homepage";
+
 // Get Tip / Create Tip
 import GetTip from "./GetTip/Display/";
 import Input from "./CreateTip";
@@ -38,44 +37,22 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <img
-            src="/images/plusMentor/plusMentor_gradient_resized.png"
-            alt="plusMentor Logo"
-            width="350"
-          />
-          <nav>
-            {/* FIXME: Uncomment these when we figure out how to implement them */}
-            {/* <NavLink to="/">Home</NavLink>
-            &nbsp;
-            <NavLink to="/createTip">Create tip</NavLink>
-            &nbsp;
-            <NavLink to="/scheduleSession">Schedule a session</NavLink> */}
-            <NavLink to="/login">Sign In</NavLink>
-            <NavLink to="/register">Register</NavLink>
-            &nbsp;&nbsp;&nbsp;
-            <NavLink to="/intro">Introduction</NavLink>
-          </nav>
-        </header>
-
-        <main>
-          <Switch>
-            <Route path="/login"></Route>
-            <Route path="/register">
-              <Register />
-            </Route>
-            <Route path="/intro">
-              <Introduction />
-            </Route>
-            <Route path="/createTip">
-              <Input />
-            </Route>
-            <Route path="/scheduleSession"></Route>
-            <Route path="/">
-              <GetTip />
-            </Route>
-          </Switch>
-        </main>
+        <Switch>
+          <Route path="/intro">
+            <Introduction />
+          </Route>
+          <Route path="/createTip">
+            <Input />
+          </Route>
+          <Route path="/scheduleSession"></Route>
+          <Route path="/login"></Route>
+          <Route path="/register">
+            <Register />
+          </Route>
+          <Route path="/">
+            <Homepage />
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
