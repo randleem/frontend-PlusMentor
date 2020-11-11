@@ -5,13 +5,21 @@ function Input() {
   const [newTip, setNewTip] = useState("");
   const [clicked, setClicked] = useState(false);
 
+  const [authentication, setAuthentication] = useState("");
+
+  // TODO: Give this an argument OR get the username/password from a state
   useEffect(() => {
     if (clicked) {
       async function submitTip() {
         console.log(newTip + " 10");
         const requestOptions = {
           method: `POST`,
-          headers: { "Content-Type": "application/json" },
+
+          // TODO: Add our credentials to the headers
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: authentication,
+          },
           body: JSON.stringify({ tip: newTip }),
         };
 
