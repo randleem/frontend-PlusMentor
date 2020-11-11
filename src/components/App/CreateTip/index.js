@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./createTip.css";
 
 function Input() {
   const [newTip, setNewTip] = useState("");
@@ -39,12 +40,15 @@ function Input() {
 
   return (
     <div style={{ display: "inline" }}>
-      <p>Share your knowledge by submitting your own tips:</p>
-      <input
-        className="input is-rounded"
-        onChange={handleChange}
-        placeholder="Add your tip here..."
-      ></input>
+      <label>
+        Share your knowledge by submitting your own tips:
+        <input
+          className="input"
+          onChange={handleChange}
+          placeholder="Add your tip here..."
+        ></input>
+      </label>
+      <br />
       <button className="button is-ghost" onClick={handleClick}>
         Submit Tip
       </button>
