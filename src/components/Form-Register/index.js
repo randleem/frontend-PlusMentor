@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "./form.css";
+import React, { useState } from "react";
+import "./form-register.css";
 
 function Register() {
   const [form, setForm] = useState("");
@@ -25,6 +25,9 @@ function Register() {
         width="600"
       />
       <main>
+        <h3 className="title is-3" id="signInTitle">
+          Create an account
+        </h3>
         <form onSubmit={handleSubmit}>
           <label className="registerLabel">
             Your Email:
@@ -61,30 +64,35 @@ function Register() {
           <br />
           <label className="registerLabel">Role:</label>
           <div class="control">
-            <input
-              className="radio"
-              name="role"
-              type="radio"
-              value="Mentor"
-              onChange={handleInputChange}
-            />
             <label for="Mentor" className="registerLabel">
+              <input
+                className="radio"
+                name="role"
+                type="radio"
+                value="Mentor"
+                onChange={handleInputChange}
+              />
               Mentor
             </label>
             <br />
-            <input
-              className="radio"
-              name="role"
-              type="radio"
-              value="Bootcamper"
-              onChange={handleInputChange}
-            />
             <label for="Bootcamper" className="registerLabel">
+              <input
+                className="radio"
+                name="role"
+                type="radio"
+                value="Bootcamper"
+                onChange={handleInputChange}
+              />
               Bootcamper
             </label>
           </div>
           <br />
-          <button className="button is-primary is-medium">Register</button>
+          <div className="formButtonsContainer">
+            <a href="/" id="logIn" className="button is-ghost is-normal">
+              ⏪ Back
+            </a>
+            <button className="button is-primary is-medium">Register</button>
+          </div>
         </form>
       </main>
     </div>

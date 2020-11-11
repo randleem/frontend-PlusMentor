@@ -1,11 +1,11 @@
 /*—————————— FORM ——————————*/
-#signInTitle {
+#registerTitle {
   color: white !important;
   margin-bottom: none;
   text-align: center;
 }
 
-.loginLabel {
+.registerLabel {
   color: white !important;
   margin: 4px;
 }
@@ -13,4 +13,17 @@
 .formButtonsContainer {
   margin: 0 auto;
   text-align: center;
+}
+
+input[type="radio"] {
+  height: 25px;
+  width: 25px;
+  vertical-align: middle;
+
+  margin: 3px 3px -30px 3px;
+}
+
+label[for="Bootcamper"],
+label[for="Mentor"] {
+  font-size: 1.3em;
 }

@@ -22,7 +22,7 @@ function Homepage() {
         id="logIn"
         className="button is-ghost is-rounded is-medium"
       >
-        Sign in
+        Log in
       </a>
     </div>
   );

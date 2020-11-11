@@ -25,6 +25,9 @@ function Login() {
         width="600"
       />
       <main>
+        <h3 className="title is-3" id="signInTitle">
+          Log in
+        </h3>
         <form onSubmit={handleSubmit}>
           <label className="loginLabel">
             Your Email:
@@ -48,7 +51,12 @@ function Login() {
           </label>
           <br />
           <br />
-          <button className="button is-primary is-medium">Login</button>
+          <div className="formButtonsContainer">
+            <a href="/" id="logIn" className="button is-ghost is-normal">
+              ⏪ Back
+            </a>
+            <button className="button is-primary is-medium">Log in</button>
+          </div>
         </form>
       </main>
     </div>
