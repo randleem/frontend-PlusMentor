@@ -9,14 +9,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Homepage from "./01_Homepage";
 
 // Get Tip / Create Tip
-import GetTip from "./GetTip/Display/";
+// import GetTip from "./GetTip/Display/";
 import Input from "./CreateTip";
 
 // FORM - Resister
 import Register from "../Form-Register";
 
 // FORM - Login
-// TODO: Add it here
 import Login from "../Form-login";
 
 // Introduction
