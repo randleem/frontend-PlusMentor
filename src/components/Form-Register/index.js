@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import "./form-register.css";
 
 function Register() {
   const [form, setForm] = useState({});
   const [register, setRegister] = useState(false);
+
+  const history = useHistory();
 
   useEffect(() => {
     if (register) {
@@ -12,6 +15,7 @@ function Register() {
         const requestOptions = {
           method: `POST`,
           // TODO: Add our credentials to the headers
+          credentials: "include",
           headers: {
             "Content-Type": "application/json",
             // FIXME: add authentication here when working
@@ -19,11 +23,14 @@ function Register() {
           body: JSON.stringify(form),
         };
 
-        const req = await fetch(`http://localhost:5000/user`, requestOptions);
+        const req = await fetch(
+          `http://localhost:5000/register`,
+          requestOptions
+        );
         const data = await req.json();
         if (data.success) {
-          console.log(data);
           console.log("WOOT YOU SUBMITTED A User!!");
+          history.push("/");
         }
       }
       submitForm();
