@@ -3,7 +3,7 @@ import "./introduction.css";
 // Header
 import Header from "../App/Header";
 
-function Introduction() {
+function Introduction({ loggedIn }) {
   const tipsForBootcampers = [
     "Mentors are an aid and support for you to use, not a cheat",
     "Dont expect too much from your mentor (they are not Steve Jobs)",
@@ -43,7 +43,7 @@ function Introduction() {
   ];
   return (
     <div>
-      <Header />
+      <Header loggedIn={loggedIn} />
       <main>
         <br />
         <div className="welcome">

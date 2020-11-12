@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
-function Header() {
+function Header({ loggedIn }) {
   // We only use this to delete the cookies, don't worry
   const [cookies, setCookie, removeCookie] = useCookies();
 
@@ -25,6 +25,7 @@ function Header() {
         &nbsp;
         <NavLink to="/GetTip">Tips</NavLink>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <p>{loggedIn}</p>
         <NavLink to="/">
           <button id="signOutButton" onClick={signOut}>
             Sign Out
