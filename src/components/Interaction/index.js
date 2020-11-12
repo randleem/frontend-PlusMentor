@@ -54,6 +54,7 @@ function Interaction() {
     if (allCardsClicked) {
       async function getAllDisplayCards() {
         const res = await fetch(`http://localhost:5000/interaction`, {
+          credentials: "include",
           headers: { accept: "application/json" },
         });
         const result = await res.json();

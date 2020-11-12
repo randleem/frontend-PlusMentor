@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Cookies from "js-cookie";
+
+import { useHistory } from "react-router-dom";
 
 import "./form-login.css";
 
+// function Login({ history }) {
 function Login() {
   const [login, setLogin] = useState("");
   const [clicked, setClicked] = useState(false);
-  const [cookie, setCookie] = useState("");
+  const history = useHistory();
 
   function handleInputChange(event) {
     const target = event.target;
@@ -24,31 +26,31 @@ function Login() {
 
         console.log(btoa(login.email + ":" + login.password));
         const res = await fetch(`http://localhost:5000/`, {
+          credentials: "include",
+          cache: "no-cache",
           headers: {
             accept: "application/json",
-            authorization: `Basic ` + btoa(login.email + ":" + login.password),
+            // capital A for Authorization
+            Authorization: `Basic ` + btoa(login.email + ":" + login.password),
+
           },
           credentials: "include",
         });
 
-        const result = await res.text();
-        console.log("The result text is:");
-        console.log(result);
 
-        Cookies.set("access_token", result[0]);
+        const result = await res;
 
-        // console.log("The body is:");
-        // console.log(result.body);
-
-        // if (result.success) {
-        //   console.log(`You are Logged In - WOOOOPPPPP`);
-        // }
+        if (result.status === 200 || result.status === 304) {
+          // redirect them to the intro page...
+          console.log("Redirecting you to the Intro page...");
+          history.push("/intro");
+        }
       }
 
       getLogin();
       setClicked(false);
     }
-  }, [clicked]);
+  }, [clicked, login, history]);
 
   function handleSubmit(event) {
     setClicked(!clicked);

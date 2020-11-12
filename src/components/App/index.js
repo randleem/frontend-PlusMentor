@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+// const history = useHistory();
 // ----------------------------------------
 
 ///// COMPONENTS
@@ -10,7 +10,6 @@ import Homepage from "./01_Homepage";
 
 // Get Tip / Create Tip
 import GetTip from "./GetTip/Display/";
-
 import Input from "./CreateTip";
 
 // FORM - Resister
@@ -60,6 +59,9 @@ function App() {
           </Route>
           <Route path="/interaction">
             <Interaction />
+          </Route>
+          <Route path="/getTip">
+            <GetTip />
           </Route>
           <Route path="/">
             <Homepage />
