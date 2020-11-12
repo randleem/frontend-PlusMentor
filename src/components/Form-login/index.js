@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 
 import "./form-login.css";
 
 function Login() {
   const [login, setLogin] = useState("");
   const [clicked, setClicked] = useState(false);
-  const [cookie, setCookie] = useState("");
+  // const [cookie, setCookie] = useState("");
 
   function handleInputChange(event) {
     const target = event.target;
@@ -20,22 +20,24 @@ function Login() {
     if (clicked) {
       async function getLogin() {
         const res = await fetch(`http://localhost:5000/`, {
+          credentials: "include",
+          cache: "no-cache",
           headers: {
             accept: "application/json",
+            // capital A for Authorization
             Authorization: `Basic ` + btoa(login.email + ":" + login.password),
           },
         });
-        const result = await res;
-        console.log(result);
-        if (result.success) {
-          console.log(`You are Logged In - WOOOOPPPPP`);
+        const result = await res.text();
+        if (result) {
+          console.log(result);
         }
       }
 
       getLogin();
       setClicked(false);
     }
-  }, [clicked]);
+  }, [clicked, login]);
 
   function handleSubmit(event) {
     setClicked(!clicked);

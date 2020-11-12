@@ -42,12 +42,14 @@ function Interaction() {
     if (allCardsClicked) {
       async function getAllDisplayCards() {
         const res = await fetch(`http://localhost:5000/interaction`, {
+          credentials: "include",
           headers: { accept: "application/json" },
         });
-        const { data, success } = await res.json();
-        if (success) {
-          setDisplayCards(data[0].tip);
-        }
+        const data = await res.json();
+        console.log(data);
+        // if (success) {
+        //   setDisplayCards(data[0].tip);
+        // }
       }
       getAllDisplayCards();
       setAllCardsClicked(false);
