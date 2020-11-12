@@ -2,7 +2,7 @@ function DisplayCard({ card }) {
   const { topic, discussion, date } = card;
 
   return (
-    <div class="tile">
+    <div class="tile is-4">
       <div class="tile is-parent">
         <div className="content" class="tile is-child box">
           <div className="card animate-entrance">

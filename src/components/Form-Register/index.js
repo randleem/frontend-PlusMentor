@@ -1,20 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./form-register.css";
 
 function Register() {
-  const [form, setForm] = useState("");
+  const [form, setForm] = useState({});
+  const [register, setRegister] = useState(false);
+
+  useEffect(() => {
+    if (register) {
+      async function submitForm() {
+        // console.log(form);
+        const requestOptions = {
+          method: `POST`,
+          // TODO: Add our credentials to the headers
+          headers: {
+            "Content-Type": "application/json",
+            // FIXME: add authentication here when working
+          },
+          body: JSON.stringify(form),
+        };
+
+        const req = await fetch(`http://localhost:5000/user`, requestOptions);
+        const data = await req.json();
+        if (data.success) {
+          console.log(data);
+          console.log("WOOT YOU SUBMITTED A User!!");
+        }
+      }
+      submitForm();
+      setRegister(false);
+    }
+  }, [form, register]);
 
   function handleInputChange(event) {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-    const newData = { ...form, [name]: value };
+    console.log(form);
+    const newData = {
+      ...form,
+      [name]: value,
+      password: "password",
+    };
+    // console.log(newData);
     setForm(newData);
   }
 
   function handleSubmit(event) {
+    setRegister(true);
     console.log(`You've registered`);
-    console.log(event);
     event.preventDefault();
   }
 
@@ -63,6 +96,17 @@ function Register() {
           </label>
           <br />
           <br />
+          <label className="registerLabel">
+            Password:
+            <input
+              className="input"
+              name="password"
+              type="password"
+              onChange={handleInputChange}
+            />
+          </label>
+          <br />
+          <br />
           <label className="registerLabel">Role:</label>
           <div class="control">
             <label for="Mentor" className="registerLabel">
@@ -89,9 +133,10 @@ function Register() {
           </div>
           <br />
           <div className="formButtonsContainer">
-            <a href="/" id="logIn" className="button is-ghost is-normal">
+            <a href="/" id="logIn" className="button is-primary is-medium">
               ⏪ Back
             </a>
+            <span> </span>
             <button className="button is-primary is-medium">Register</button>
           </div>
         </form>
