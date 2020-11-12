@@ -27,7 +27,7 @@ function MainTipComponentDiv() {
   }
 
   return (
-    <div>
+    <div class="tile is-ancestor">
       <Button id="get-tip-button" handleClick={handleClick} />
       <DisplayTip tip={tip} />
     </div>

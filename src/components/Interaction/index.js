@@ -1,16 +1,39 @@
 import React, { useEffect, useState } from "react";
 import DisplayCard from "./DisplayCard";
 
-const testCard = {
-  interaction_id: 1,
-  date: `2020-11-09`,
-  topic: `How to make friends and influence people`,
-  discussion: `Just be yourself - you're aweosme!!!`,
-  team_id: 2,
-};
+const testCard = [
+  {
+    interaction_id: 1,
+    date: `2020-11-09`,
+    topic: `How to make friends and influence people`,
+    discussion: `Just be yourself - you're aweosme!!!`,
+    team_id: 2,
+  },
+  {
+    interaction_id: 2,
+    date: `2020-11-08`,
+    topic: `Loops `,
+    discussion: ``,
+    team_id: 2,
+  },
+  {
+    interaction_id: 1,
+    date: `2020-11-09`,
+    topic: `How to make friends and influence people`,
+    discussion: `Just be yourself - you're aweosme!!!`,
+    team_id: 2,
+  },
+  {
+    interaction_id: 1,
+    date: `2020-11-09`,
+    topic: `How to make friends and influence people`,
+    discussion: `Just be yourself - you're aweosme!!!`,
+    team_id: 2,
+  },
+];
 
 function Interaction() {
-  const [displayCards, setDisplayCards] = useState([testCard]);
+  const [displayCards, setDisplayCards] = useState(testCard);
   const [newCard, setNewCard] = useState({});
   const [allCardsClicked, setAllCardsClicked] = useState(false);
 

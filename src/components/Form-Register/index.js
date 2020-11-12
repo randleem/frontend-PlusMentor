@@ -13,6 +13,7 @@ function Register() {
   }
 
   function handleSubmit(event) {
+    console.log(`You've registered`);
     console.log(event);
     event.preventDefault();
   }
