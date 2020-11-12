@@ -83,17 +83,19 @@ function Login() {
             <input
               className="input"
               name="password"
-              type="text"
+              type="password"
               onChange={handleInputChange}
             />
           </label>
           <br />
           <br />
+
           <div className="formButtonsContainer">
-            <a href="/" id="logIn" className="button is-ghost is-normal">
+            <a href="/" id="log In" className="button is-primary is-medium">
               ⏪ Back
             </a>
-            <button className="button is-primary is-medium">Log in</button>
+            <span> </span>
+            <button className="button is-primary is-medium">Log In</button>
           </div>
         </form>
       </main>
