@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 
 import "./form-login.css";
 
 function Login() {
   const [login, setLogin] = useState("");
+  const [clicked, setClicked] = useState(false);
+  const [cookie, setCookie] = useState("");
 
   function handleInputChange(event) {
     const target = event.target;
@@ -13,7 +16,29 @@ function Login() {
     setLogin(newData);
   }
 
+  useEffect(() => {
+    if (clicked) {
+      async function getLogin() {
+        const res = await fetch(`http://localhost:5000/`, {
+          headers: {
+            accept: "application/json",
+            Authorization: `Basic ` + btoa(login.email + ":" + login.password),
+          },
+        });
+        const result = await res;
+        console.log(result);
+        if (result.success) {
+          console.log(`You are Logged In - WOOOOPPPPP`);
+        }
+      }
+
+      getLogin();
+      setClicked(false);
+    }
+  }, [clicked]);
+
   function handleSubmit(event) {
+    setClicked(!clicked);
     event.preventDefault();
   }
 
