@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import DisplayCard from "./DisplayCard";
 import Header from "../App/Header";
 
-function Interaction() {
+function Interaction({ loggedIn }) {
   const [displayCards, setDisplayCards] = useState([]);
   const [newCard, setNewCard] = useState({});
   const [displayCardBy, setDisplayCardBy] = useState([]);
@@ -14,6 +14,7 @@ function Interaction() {
   // Get all Display Cards/Interactions
   useEffect(() => {
     if (allCardsClicked) {
+      console.log(loggedIn);
       async function getAllDisplayCards() {
         const res = await fetch(`http://localhost:5000/interaction`, {
           credentials: "include",
@@ -30,9 +31,26 @@ function Interaction() {
     }
   }, [allCardsClicked]);
 
-  function handleGetAllCardsClick() {
-    setAllCardsClicked(!allCardsClicked);
-  }
+  // Get Cards/Interactions by email
+  useEffect(() => {
+    if (submitDisplayCardBy) {
+      async function getDisplayCardsBy() {
+        const res = await fetch(
+          `http://localhost:5000/interaction?email=${loggedIn}`,
+          {
+            credentials: "include",
+            headers: { accept: "application/json" },
+          }
+        );
+        const result = await res.json();
+        if (result.success) {
+          setDisplayCards(result.data);
+        }
+      }
+      getDisplayCardsBy();
+      setSubmitDisplayCardBy(false);
+    }
+  }, [submitDisplayCardBy]);
 
   // Post Card/Interaction
   useEffect(() => {
@@ -79,8 +97,13 @@ function Interaction() {
     setSubmitCard(true);
   }
 
+  function handleGetAllCardsClick() {
+    setAllCardsClicked(!allCardsClicked);
+  }
+
   function dropClick() {
-    console.log("DropDown Clicked");
+    console.log("drop clicked");
+    setSubmitDisplayCardBy(!submitDisplayCardBy);
   }
 
   return (
@@ -123,14 +146,15 @@ function Interaction() {
           Get All Cards
         </button>
         &nbsp;&nbsp;
-        <div className="dropdown ">
+        <div className="dropdown">
           <div className="dropdown-trigger">
             <button
+              onClick={dropClick}
               className="button is-primary is-medium"
               aria-haspopup="true"
               aria-controls="dropdown-menu"
             >
-              <span>Display Cards By</span>
+              <span>Display Cards By Email</span>
               <span className="icon is-small">
                 <i className="fas fa-angle-down" aria-hidden="true"></i>
               </span>
