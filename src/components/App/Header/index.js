@@ -1,6 +1,14 @@
 import { NavLink } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 function Header() {
+  // We only use this to delete the cookies, don't worry
+  const [cookies, setCookie, removeCookie] = useCookies();
+
+  function signOut() {
+    removeCookie("user");
+  }
+
   return (
     <header className="App-header">
       <img
@@ -9,16 +17,19 @@ function Header() {
         width="350"
       />
       <nav>
-        {/* FIXME: Uncomment these when we figure out how to implement them */}
-        {/* <NavLink to="/">Home</NavLink>
-      &nbsp;
-      <NavLink to="/createTip">Create tip</NavLink>
-      &nbsp;
-      <NavLink to="/scheduleSession">Schedule a session</NavLink> */}
-        <NavLink to="/login">Sign In</NavLink>
-        <NavLink to="/register">Register</NavLink>
-        &nbsp;&nbsp;&nbsp;
+        {/* <NavLink to="/login">Sign In</NavLink>
+        <NavLink to="/register">Register</NavLink> */}
         <NavLink to="/intro">Introduction</NavLink>
+        &nbsp;
+        <NavLink to="/interaction">Your sessions</NavLink>
+        &nbsp;
+        <NavLink to="/GetTip">Tips</NavLink>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <NavLink to="/">
+          <button id="signOutButton" onClick={signOut}>
+            Sign Out
+          </button>
+        </NavLink>
       </nav>
     </header>
   );
