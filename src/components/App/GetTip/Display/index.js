@@ -12,13 +12,15 @@ function MainTipComponentDiv() {
         const res = await fetch(`http://localhost:5000/randomTip/randomTip`, {
           credentials: "include",
           headers: { accept: "application/json" },
+          credentials: "same-origin",
         });
 
-        const { data } = await res.json();
 
-        if (data) {
-          setTip(data[0].tip);
-        }
+        const { data, success } = await res.json();
+        if (success) {
+           setTip(data[0].tip);
+         }
+
       }
       getTip();
       setClicked(false);

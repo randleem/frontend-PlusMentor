@@ -21,6 +21,10 @@ function Login() {
   useEffect(() => {
     if (clicked) {
       async function getLogin() {
+        console.log(login.email);
+        console.log(login.password);
+
+        console.log(btoa(login.email + ":" + login.password));
         const res = await fetch(`http://localhost:5000/`, {
           credentials: "include",
           cache: "no-cache",
@@ -28,8 +32,11 @@ function Login() {
             accept: "application/json",
             // capital A for Authorization
             Authorization: `Basic ` + btoa(login.email + ":" + login.password),
+
           },
+          credentials: "include",
         });
+
 
         const result = await res;
 
@@ -78,17 +85,19 @@ function Login() {
             <input
               className="input"
               name="password"
-              type="text"
+              type="password"
               onChange={handleInputChange}
             />
           </label>
           <br />
           <br />
+
           <div className="formButtonsContainer">
-            <a href="/" id="logIn" className="button is-ghost is-normal">
+            <a href="/" id="log In" className="button is-primary is-medium">
               ⏪ Back
             </a>
-            <button className="button is-primary is-medium">Log in</button>
+            <span> </span>
+            <button className="button is-primary is-medium">Log In</button>
           </div>
         </form>
       </main>
