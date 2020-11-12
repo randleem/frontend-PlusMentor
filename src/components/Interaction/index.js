@@ -1,36 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DisplayCard from "./DisplayCard";
 
-const testCard = [
-  {
-    interaction_id: 1,
-    date: `2020-11-09`,
-    topic: `How to make friends and influence people`,
-    discussion: `Just be yourself - you're aweosme!!!`,
-    team_id: 2,
-  },
-  {
-    interaction_id: 2,
-    date: `2020-11-08`,
-    topic: `Loops `,
-    discussion: ``,
-    team_id: 2,
-  },
-  {
-    interaction_id: 1,
-    date: `2020-11-09`,
-    topic: `How to make friends and influence people`,
-    discussion: `Just be yourself - you're aweosme!!!`,
-    team_id: 2,
-  },
-  {
-    interaction_id: 1,
-    date: `2020-11-09`,
-    topic: `How to make friends and influence people`,
-    discussion: `Just be yourself - you're aweosme!!!`,
-    team_id: 2,
-  },
-];
 
 function Interaction() {
   const [displayCards, setDisplayCards] = useState(testCard);
@@ -45,11 +15,12 @@ function Interaction() {
           credentials: "include",
           headers: { accept: "application/json" },
         });
+
         const data = await res.json();
-        console.log(data);
-        // if (success) {
-        //   setDisplayCards(data[0].tip);
-        // }
+        if (result.success) {
+          setDisplayCards(result.data);
+        }
+
       }
       getAllDisplayCards();
       setAllCardsClicked(false);
@@ -59,6 +30,33 @@ function Interaction() {
   function handleGetAllCardsClick() {
     setAllCardsClicked(!allCardsClicked);
   }
+
+  // Post Card/Interaction
+  useEffect(() => {
+    if (submitCard) {
+      async function submitNewCard() {
+        const requestOptions = {
+          method: `POST`,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newCard),
+        };
+
+        const req = await fetch(
+          `http://localhost:5000/interaction`,
+          requestOptions
+        );
+        const data = await req.json();
+        if (data.success) {
+          console.log(data);
+          console.log("WOOT YOU SUBMITTED A card!!");
+        }
+      }
+      submitNewCard();
+      setSubmitCard(false);
+    }
+  }, [newCard, submitCard]);
 
   function handleNewCard(event) {
     const target = event.target;
@@ -96,54 +94,47 @@ function Interaction() {
         </label>
         <br />
         <br />
-        <label className="loginLabel">
-          Discussion:
-          <input
-            className="input"
-            name="discussion"
-            type="text"
-            onChange={handleNewCard}
-          />
-        </label>
-        <br />
-        <br />
-        <button className="button is-primary is-medium">Submit New Card</button>
-      </form>
-      <br />
-      <br />
-      <button
-        onClick={handleGetAllCardsClick}
-        className="button is-primary is-medium"
-      >
-        Get All Cards
-      </button>
-
-      <br />
-      <br />
-      <div className="dropdown ">
-        <div className="dropdown-trigger">
-          <button
-            className="button is-primary is-medium"
-            aria-haspopup="true"
-            aria-controls="dropdown-menu"
-          >
-            <span>Display Cards By</span>
-            <span className="icon is-small">
-              <i className="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </div>
-        <div className="dropdown-menu" id="dropdown-menu" role="menu">
-          <div className="dropdown-content">
-            <div className="dropdown-item">
-              <p onClick={dropClick} className="dropdown-item" id="date">
-                Date
-              </p>
-            </div>
-            <div className="dropdown-item">
-              <p onClick={dropClick} className="dropdown-item" id="topic">
-                Topic
-              </p>
+        <button
+          onClick={handleGetAllCardsClick}
+          className="button is-primary is-medium"
+        >
+          Get All Cards
+        </button>
+        &nbsp;&nbsp;
+        <div className="dropdown ">
+          <div className="dropdown-trigger">
+            <button
+              className="button is-primary is-medium"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu"
+            >
+              <span>Display Cards By</span>
+              <span className="icon is-small">
+                <i className="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div className="dropdown-menu" id="dropdown-menu" role="menu">
+            <div className="dropdown-content">
+              <div className="dropdown-item">
+                <p onClick={dropClick} className="dropdown-item" id="date">
+                  Date
+                </p>
+              </div>
+              <div className="dropdown-item">
+                <p onClick={dropClick} className="dropdown-item" id="topic">
+                  Topic
+                </p>
+              </div>
+              <div className="dropdown-item">
+                <p
+                  onClick={dropClick}
+                  className="dropdown-item"
+                  id="discussion"
+                >
+                  Discussion
+                </p>
+              </div>
             </div>
             <div className="dropdown-item">
               <p onClick={dropClick} className="dropdown-item" id="discussion">
@@ -155,16 +146,16 @@ function Interaction() {
             </a>
           </div>
         </div>
-      </div>
-      <br />
-      <br />
-      <br />
-      <div>
-        {displayCards.map((card) => {
-          return <DisplayCard card={card} key={card.interaction_id} />;
-        })}
-      </div>
-    </main>
+        <br />
+        <br />
+        <br />
+        <div className="tile is-ancestor">
+          {displayCards.map((card) => {
+            return <DisplayCard card={card} key={card.interaction_id} />;
+          })}
+        </div>
+      </main>
+    </div>
   );
 }
 

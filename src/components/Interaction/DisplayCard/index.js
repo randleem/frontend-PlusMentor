@@ -2,12 +2,12 @@ function DisplayCard({ card }) {
   const { topic, discussion, date } = card;
 
   return (
-    <div class="tile is-4">
-      <div class="tile is-parent">
-        <div className="content" class="tile is-child box">
+    <div className="tile is-4">
+      <div className="tile is-parent">
+        <div className="content tile is-child box">
           <div className="card animate-entrance">
             <header className="card-header">
-              <p className="card-header-title">Date: {date}</p>
+              <p className="card-header-title">Date: {date.slice(0, 10)}</p>
               <i className="fas fa-angle-down" aria-hidden="true"></i>
             </header>
             <div className="card-content">
