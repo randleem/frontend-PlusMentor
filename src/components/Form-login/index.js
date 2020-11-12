@@ -19,17 +19,30 @@ function Login() {
   useEffect(() => {
     if (clicked) {
       async function getLogin() {
+        console.log(login.email);
+        console.log(login.password);
+
+        console.log(btoa(login.email + ":" + login.password));
         const res = await fetch(`http://localhost:5000/`, {
           headers: {
             accept: "application/json",
-            Authorization: `Basic ` + btoa(login.email + ":" + login.password),
+            authorization: `Basic ` + btoa(login.email + ":" + login.password),
           },
+          credentials: "include",
         });
-        const result = await res;
+
+        const result = await res.text();
+        console.log("The result text is:");
         console.log(result);
-        if (result.success) {
-          console.log(`You are Logged In - WOOOOPPPPP`);
-        }
+
+        Cookies.set("access_token", result[0]);
+
+        // console.log("The body is:");
+        // console.log(result.body);
+
+        // if (result.success) {
+        //   console.log(`You are Logged In - WOOOOPPPPP`);
+        // }
       }
 
       getLogin();
