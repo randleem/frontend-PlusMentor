@@ -45,35 +45,39 @@ function Introduction({ loggedIn }) {
     <div>
       <Header loggedIn={loggedIn} />
       <main>
-        <br />
-        <div className="welcome">
-          <img
-            id="school-of-code-logo"
-            src="https://d33wubrfki0l68.cloudfront.net/e6fddcbea146f91d2f3c160f7d56a9391a4740b0/4e758/static/logo-51c754388b198e5bbb0d08a971ebbfa2.png"
-            width={200}
-            height={`auto`}
-            alt={`school of code logo`}
-          />
-          <div className="card animate-entrance" id="welocme-box">
-            <header className="card-header">
-              <h1 className="card-header-title">
-                Welcome to the School of Code Mentoring App
-              </h1>
-              <i className="fas fa-angle-down" aria-hidden="true"></i>
-            </header>
-            <div className="card-content">
-              <div className="content">
-                <p>The Mentoring Experience is a Two-Way Street</p>
-                <br />
-              </div>
+        <div className="card animate-entrance">
+          <header className="card-header">
+            <h1 className="card-header-title" id="">
+              Welcome to plusMentor: The School of Code Mentoring App
+            </h1>
+            <i className="fas fa-angle-down" aria-hidden="true"></i>
+          </header>
+          <div className="card-content">
+            <div className="content">
+              <img
+                id="school-of-code-logo"
+                src="https://d33wubrfki0l68.cloudfront.net/e6fddcbea146f91d2f3c160f7d56a9391a4740b0/4e758/static/logo-51c754388b198e5bbb0d08a971ebbfa2.png"
+                alt={`school of code logo`}
+              />
+              <p>
+                In the School of Code, mentoring is a professional partnership
+                between an experienced developer (the mentor) and a bootcamper
+                (the mentee). The goal is to develop your skills and knowledge
+                and enhance both participants' professional, personal and career
+                growth.
+              </p>
+              <br />
             </div>
           </div>
         </div>
 
         <div className="checkListPaper">
           <h4 className="title is-4">
-            For Bootcampers - here are some tips to get you started on your
-            first session.
+            We get it - having your first mentoring session can be
+            nerve-racking!
+            <br />
+            Here is a list of things to do on your first session to make sure
+            you get the best of
           </h4>
           {tipsForBootcampers.map((el, i) => (
             <div className="checkListItem">
@@ -89,9 +93,8 @@ function Introduction({ loggedIn }) {
             </div>
           ))}
         </div>
-        <br />
-        <br />
-        <div className="checkListPaper">
+
+        {/* <div className="checkListPaper">
           <h4 className="title is-4">
             For Mentors - here are some tips to get you started on your first
             session.
@@ -109,7 +112,7 @@ function Introduction({ loggedIn }) {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </main>
     </div>
   );
