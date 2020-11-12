@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-// import Cookies from "js-cookie";
+
+import { useHistory } from "react-router-dom";
 
 import "./form-login.css";
 
+// function Login({ history }) {
 function Login() {
   const [login, setLogin] = useState("");
   const [clicked, setClicked] = useState(false);
-  // const [cookie, setCookie] = useState("");
+  const history = useHistory();
 
   function handleInputChange(event) {
     const target = event.target;
@@ -28,16 +30,20 @@ function Login() {
             Authorization: `Basic ` + btoa(login.email + ":" + login.password),
           },
         });
-        const result = await res.text();
-        if (result) {
-          console.log(result);
+
+        const result = await res;
+
+        if (result.status === 200 || result.status === 304) {
+          // redirect them to the intro page...
+          console.log("Redirecting you to the Intro page...");
+          history.push("/intro");
         }
       }
 
       getLogin();
       setClicked(false);
     }
-  }, [clicked, login]);
+  }, [clicked, login, history]);
 
   function handleSubmit(event) {
     setClicked(!clicked);

@@ -9,16 +9,16 @@ function MainTipComponentDiv() {
   useEffect(() => {
     if (clicked) {
       async function getTip() {
-        const res = await fetch(`http://localhost:5000/randomTip`, {
+        const res = await fetch(`http://localhost:5000/randomTip/randomTip`, {
           credentials: "include",
           headers: { accept: "application/json" },
         });
 
-        const data = await res.json();
-        console.log(data);
-        // if (data) {
-        //   setTip(data[0].tip);
-        // }
+        const { data } = await res.json();
+
+        if (data) {
+          setTip(data[0].tip);
+        }
       }
       getTip();
       setClicked(false);

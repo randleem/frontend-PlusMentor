@@ -11,7 +11,7 @@ function DisplayTip({ tip }) {
   return (
     <div className="card animate-entrance">
       <header className="card-header">
-        <p className="card-header-title">Tip: {value}</p>
+        <p className="card-header-title">Tip:</p>
         <span className="icon">
           <i className="fas fa-angle-down" aria-hidden="true"></i>
         </span>

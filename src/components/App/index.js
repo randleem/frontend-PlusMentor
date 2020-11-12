@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+// const history = useHistory();
 // ----------------------------------------
 
 ///// COMPONENTS
@@ -16,7 +16,7 @@ import Input from "./CreateTip";
 import Register from "../Form-Register";
 
 // FORM - Login
-import Login from "../Form-login";
+import Login from "../Form-Login";
 
 // Introduction
 import Introduction from "../Introduction";
