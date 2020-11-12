@@ -6,7 +6,7 @@
 } */
 
 .checkListPaper {
-  margin-top: 200px;
+  margin-top: 60px;
   padding: 20px;
   background: rgb(255, 255, 255) !important;
   border-radius: 6px;
@@ -26,9 +26,16 @@
 
 #school-of-code-logo {
   float: left !important;
+  padding: 15px 10px;
+  width: 200px;
+  height: auto;
 }
 
 #welocme-box {
   width: 75% !important;
   float: right !important;
+}
+
+svg[role="img"] {
+  display: none;
 }
