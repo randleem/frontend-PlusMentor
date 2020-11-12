@@ -9,14 +9,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Homepage from "./01_Homepage";
 
 // Get Tip / Create Tip
-// import GetTip from "./GetTip/Display/";
+import GetTip from "./GetTip/Display/";
+
 import Input from "./CreateTip";
 
 // FORM - Resister
 import Register from "../Form-Register";
 
 // FORM - Login
-import Login from "../Form-login";
+import Login from "../Form-Login";
 
 // Introduction
 import Introduction from "../Introduction";
@@ -50,6 +51,9 @@ function App() {
           <Route path="/scheduleSession"></Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/getTip">
+            <GetTip />
           </Route>
           <Route path="/register">
             <Register />

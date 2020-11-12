@@ -11,11 +11,14 @@ function MainTipComponentDiv() {
       async function getTip() {
         const res = await fetch(`http://localhost:5000/randomTip`, {
           headers: { accept: "application/json" },
+          credentials: "same-origin",
         });
-        const { data, success } = await res.json();
-        if (success) {
-          setTip(data[0].tip);
-        }
+        // const { data, success } = await res.json();
+        const trying = await res;
+        console.log(trying);
+        // if (success) {
+        //   setTip(data[0].tip);
+        // }
       }
       getTip();
       setClicked(false);
