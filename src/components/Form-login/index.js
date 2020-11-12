@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import "./form-login.css";
 
 // function Login({ history }) {
-function Login() {
+function Login({ getEmailFromLogin }) {
   const [login, setLogin] = useState("");
   const [clicked, setClicked] = useState(false);
   const history = useHistory();
@@ -51,6 +51,7 @@ function Login() {
 
   function handleSubmit(event) {
     setClicked(!clicked);
+    getEmailFromLogin(login.email);
     event.preventDefault();
   }
 

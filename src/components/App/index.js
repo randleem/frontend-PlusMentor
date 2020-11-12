@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // ----------------------------------------
@@ -37,34 +37,49 @@ import "./Animations.css";
 // ----------------------------------------
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState("");
+
+  function getEmailFromLogin(input) {
+    setLoggedIn(input);
+  }
+
   return (
     <Router>
       <div className="App">
         <Switch>
           <Route path="/intro">
-            <Introduction />
+            <Introduction
+              loggedIn={loggedIn}
+              getEmailFromLogin={getEmailFromLogin}
+            />
           </Route>
           <Route path="/createTip">
-            <Input />
+            <Input loggedIn={loggedIn} getEmailFromLogin={getEmailFromLogin} />
           </Route>
           <Route path="/scheduleSession"></Route>
           <Route path="/login">
-            <Login />
+            <Login loggedIn={loggedIn} getEmailFromLogin={getEmailFromLogin} />
           </Route>
           <Route path="/getTip">
-            <GetTip />
+            <GetTip getEmailFromLogin={getEmailFromLogin} />
           </Route>
           <Route path="/register">
             <Register />
           </Route>
           <Route path="/interaction">
-            <Interaction />
+            <Interaction
+              loggedIn={loggedIn}
+              getEmailFromLogin={getEmailFromLogin}
+            />
           </Route>
           <Route path="/getTip">
-            <GetTip />
+            <GetTip loggedIn={loggedIn} getEmailFromLogin={getEmailFromLogin} />
           </Route>
           <Route path="/">
-            <Homepage />
+            <Homepage
+              loggedIn={loggedIn}
+              getEmailFromLogin={getEmailFromLogin}
+            />
           </Route>
         </Switch>
       </div>
