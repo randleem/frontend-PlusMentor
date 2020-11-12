@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import DisplayCard from "./DisplayCard";
-
+import Header from "../App/Header";
 
 function Interaction() {
-  const [displayCards, setDisplayCards] = useState(testCard);
+  const [displayCards, setDisplayCards] = useState([]);
   const [newCard, setNewCard] = useState({});
+  const [displayCardBy, setDisplayCardBy] = useState([]);
   const [allCardsClicked, setAllCardsClicked] = useState(false);
+  const [submitCard, setSubmitCard] = useState(false);
+  const [displayQuery, setDisplayQuery] = useState("");
+  const [submitDisplayCardBy, setSubmitDisplayCardBy] = useState(false);
 
   // Get all Display Cards/Interactions
   useEffect(() => {
@@ -16,11 +20,10 @@ function Interaction() {
           headers: { accept: "application/json" },
         });
 
-        const data = await res.json();
+        const result = await res.json();
         if (result.success) {
           setDisplayCards(result.data);
         }
-
       }
       getAllDisplayCards();
       setAllCardsClicked(false);
@@ -37,6 +40,7 @@ function Interaction() {
       async function submitNewCard() {
         const requestOptions = {
           method: `POST`,
+          credentials: "include",
           headers: {
             "Content-Type": "application/json",
           },
@@ -72,8 +76,7 @@ function Interaction() {
   }
 
   function handleSubmit() {
-    console.log("Submit New Card");
-    // post request to interactions_table
+    setSubmitCard(true);
   }
 
   function dropClick() {
@@ -81,17 +84,36 @@ function Interaction() {
   }
 
   return (
-    <main>
-      <form onSubmit={handleSubmit}>
-        <label className="loginLabel">
-          Topic:
-          <input
-            className="input"
-            name="topic"
-            type="text"
-            onChange={handleNewCard}
-          />
-        </label>
+    <div>
+      <Header />
+      <main>
+        <form onSubmit={handleSubmit}>
+          <label className="loginLabel">
+            Topic:
+            <input
+              className="input"
+              name="topic"
+              type="text"
+              onChange={handleNewCard}
+            />
+          </label>
+          <br />
+          <br />
+          <label className="loginLabel">
+            Discussion:
+            <input
+              className="input"
+              name="discussion"
+              type="text"
+              onChange={handleNewCard}
+            />
+          </label>
+          <br />
+          <br />
+          <button className="button is-primary is-medium">
+            Submit New Card
+          </button>
+        </form>
         <br />
         <br />
         <button
@@ -136,14 +158,6 @@ function Interaction() {
                 </p>
               </div>
             </div>
-            <div className="dropdown-item">
-              <p onClick={dropClick} className="dropdown-item" id="discussion">
-                Discussion
-              </p>
-            </div>
-            <a href="/" class="dropdown-item">
-              Link to Home Page - TEST
-            </a>
           </div>
         </div>
         <br />
