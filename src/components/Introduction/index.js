@@ -45,6 +45,31 @@ function Introduction() {
     <div>
       <Header />
       <main>
+        <br />
+        <div className="welcome">
+          <img
+            id="school-of-code-logo"
+            src="https://d33wubrfki0l68.cloudfront.net/e6fddcbea146f91d2f3c160f7d56a9391a4740b0/4e758/static/logo-51c754388b198e5bbb0d08a971ebbfa2.png"
+            width={200}
+            height={`auto`}
+            alt={`school of code logo`}
+          />
+          <div className="card animate-entrance" id="welocme-box">
+            <header className="card-header">
+              <h1 className="card-header-title">
+                Welcome to the School of Code Mentoring App
+              </h1>
+              <i className="fas fa-angle-down" aria-hidden="true"></i>
+            </header>
+            <div className="card-content">
+              <div className="content">
+                <p>The Mentoring Experience is a Two-Way Street</p>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="checkListPaper">
           <h4 className="title is-4">
             For Bootcampers - here are some tips to get you started on your
@@ -68,8 +93,8 @@ function Introduction() {
         <br />
         <div className="checkListPaper">
           <h4 className="title is-4">
-            For Bootcampers - here are some tips to get you started on your
-            first session.
+            For Mentors - here are some tips to get you started on your first
+            session.
           </h4>
           {tipsForMentors.map((el, i) => (
             <div className="checkListItem">
