@@ -2,44 +2,6 @@ import React, { useEffect, useState } from "react";
 import DisplayCard from "./DisplayCard";
 import Header from "../App/Header";
 
-const testCard = [
-  {
-    interaction_id: 1,
-    date: `2020-11-09`,
-    topic: `How to make friends and influence people`,
-    discussion: `Just be yourself - you're aweosme!!!`,
-    team_id: 2,
-  },
-  {
-    interaction_id: 2,
-    date: `2020-11-08`,
-    topic: `Loops `,
-    discussion: ``,
-    team_id: 2,
-  },
-  {
-    interaction_id: 1,
-    date: `2020-11-09`,
-    topic: `How to make friends and influence people`,
-    discussion: `Just be yourself - you're aweosme!!!`,
-    team_id: 2,
-  },
-  {
-    interaction_id: 1,
-    date: `2020-11-09`,
-    topic: `How to make friends and influence people`,
-    discussion: `Just be yourself - you're aweosme!!!`,
-    team_id: 2,
-  },
-  {
-    interaction_id: 1,
-    date: `2020-11-09`,
-    topic: `How to make friends and influence people`,
-    discussion: `Just be yourself - you're aweosme!!!`,
-    team_id: 2,
-  },
-];
-
 function Interaction() {
   const [displayCards, setDisplayCards] = useState([]);
   const [newCard, setNewCard] = useState({});
@@ -58,7 +20,6 @@ function Interaction() {
           headers: { accept: "application/json" },
         });
         const result = await res.json();
-        console.log(result);
         if (result.success) {
           setDisplayCards(result.data);
         }
@@ -71,18 +32,14 @@ function Interaction() {
   function handleGetAllCardsClick() {
     setAllCardsClicked(!allCardsClicked);
   }
-  // Post CArd/Interaction
+  // Post Card/Interaction
   useEffect(() => {
-    console.log(newCard);
     if (submitCard) {
       async function submitNewCard() {
-        // console.log(form);
         const requestOptions = {
           method: `POST`,
-          // TODO: Add our credentials to the headers
           headers: {
             "Content-Type": "application/json",
-            // FIXME: add authentication here when working
           },
           body: JSON.stringify(newCard),
         };
@@ -164,9 +121,7 @@ function Interaction() {
         >
           Get All Cards
         </button>
-
-        <br />
-        <br />
+        &nbsp;&nbsp;
         <div className="dropdown ">
           <div className="dropdown-trigger">
             <button
@@ -201,16 +156,12 @@ function Interaction() {
                   Discussion
                 </p>
               </div>
-              <a href="/" class="dropdown-item">
-                Link to Home Page - TEST
-              </a>
             </div>
           </div>
         </div>
         <br />
         <br />
         <br />
-
         <div className="tile is-ancestor">
           {displayCards.map((card) => {
             return <DisplayCard card={card} key={card.interaction_id} />;
