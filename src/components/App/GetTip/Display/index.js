@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import DisplayTip from "./DisplayTip";
+import Header from "../../Header";
 
 function MainTipComponentDiv() {
   const [tip, setTip] = useState("Your tips will be displayed here!");
@@ -29,9 +30,12 @@ function MainTipComponentDiv() {
   }
 
   return (
-    <div class="tile is-ancestor">
-      <Button id="get-tip-button" handleClick={handleClick} />
-      <DisplayTip tip={tip} />
+    <div>
+      <Header />
+      <div class="tile is-ancestor">
+        <Button id="get-tip-button" handleClick={handleClick} />
+        <DisplayTip tip={tip} />
+      </div>
     </div>
   );
 }

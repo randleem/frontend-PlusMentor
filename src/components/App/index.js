@@ -60,9 +60,9 @@ function App() {
           <Route path="/login">
             <Login loggedIn={loggedIn} getEmailFromLogin={getEmailFromLogin} />
           </Route>
-          <Route path="/getTip">
+          {/* <Route path="/getTip">
             <GetTip getEmailFromLogin={getEmailFromLogin} />
-          </Route>
+          </Route> */}
           <Route path="/register">
             <Register />
           </Route>

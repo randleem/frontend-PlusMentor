@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Header from "../../../Header";
 
 function DisplayTip({ tip }) {
   const [value, setValue] = useState(tip);
