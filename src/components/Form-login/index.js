@@ -32,11 +32,8 @@ function Login() {
             accept: "application/json",
             // capital A for Authorization
             Authorization: `Basic ` + btoa(login.email + ":" + login.password),
-
           },
-          credentials: "include",
         });
-
 
         const result = await res;
 
