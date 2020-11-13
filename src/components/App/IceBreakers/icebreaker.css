@@ -1,10 +1,3 @@
-/*—————————— INTRODUCTION ——————————*/
-/* label {
-  color: black !important;
-  margin: 4px;
-  display: inline;
-} */
-
 .checkListPaper {
   margin-top: 200px;
   padding: 20px;
@@ -20,6 +13,13 @@
   margin-top: 13px;
 }
 
+.marmite {
+  margin-top: 200px;
+  padding: 20px;
+  background: rgb(255, 255, 255) !important;
+  border-radius: 6px;
+}
+
 .welcome {
   width: 90% !important;
 }
@@ -29,6 +29,6 @@
 }
 
 #welocme-box {
-  width: 100% !important;
+  width: 75% !important;
   float: right !important;
 }

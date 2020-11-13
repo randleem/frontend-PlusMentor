@@ -24,6 +24,7 @@ function Header({ loggedIn }) {
         <NavLink to="/interaction">Your sessions</NavLink>
         &nbsp;
         <NavLink to="/GetTip">Tips</NavLink>
+        <NavLink to="/icebreaker">IceBreaker</NavLink>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <p>{loggedIn}</p>
         <NavLink to="/">
