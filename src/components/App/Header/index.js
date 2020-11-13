@@ -1,12 +1,19 @@
 import { NavLink } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import { useEffect } from "react";
 
-function Header({ loggedIn }) {
+function Header() {
   // We only use this to delete the cookies, don't worry
   const [cookies, setCookie, removeCookie] = useCookies();
 
   function signOut() {
     removeCookie("user");
+  }
+
+  let loggedIn = "";
+
+  if (cookies.user) {
+    loggedIn = cookies.user;
   }
 
   return (

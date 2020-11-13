@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import DisplayCard from "./DisplayCard";
 import Header from "../App/Header";
+import { useCookies } from "react-cookie";
 
 import "./interaction.css";
 
-function Interaction({ loggedIn }) {
+function Interaction() {
   const [displayCards, setDisplayCards] = useState([]);
   const [newCard, setNewCard] = useState({});
   const [displayCardBy, setDisplayCardBy] = useState([]);
@@ -13,10 +14,17 @@ function Interaction({ loggedIn }) {
   const [displayQuery, setDisplayQuery] = useState("");
   const [submitDisplayCardBy, setSubmitDisplayCardBy] = useState(false);
 
+  const [cookies, setCookie, removeCookie] = useCookies();
+
+  let loggedIn = "";
+
+  if (cookies.user) {
+    loggedIn = cookies.user;
+  }
+
   // Get all Display Cards/Interactions
   useEffect(() => {
     if (allCardsClicked) {
-      console.log(loggedIn);
       async function getAllDisplayCards() {
         const res = await fetch(`http://localhost:5000/interaction`, {
           credentials: "include",

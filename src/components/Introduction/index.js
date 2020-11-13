@@ -54,7 +54,7 @@ function Introduction({ loggedIn }) {
             nerve-racking!
             <br />
             Here is a list of things to do on your first session to make sure
-            you get the best of
+            you get the most of it
           </h4>
           {tipsForBootcampers.map((el, i) => (
             <div className="checkListItem">

@@ -51,17 +51,14 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/intro">
-            <Introduction
-              loggedIn={loggedIn}
-              getEmailFromLogin={getEmailFromLogin}
-            />
+            <Introduction getEmailFromLogin={getEmailFromLogin} />
           </Route>
           <Route path="/createTip">
-            <Input loggedIn={loggedIn} getEmailFromLogin={getEmailFromLogin} />
+            <Input getEmailFromLogin={getEmailFromLogin} />
           </Route>
           <Route path="/scheduleSession"></Route>
           <Route path="/login">
-            <Login loggedIn={loggedIn} getEmailFromLogin={getEmailFromLogin} />
+            <Login getEmailFromLogin={getEmailFromLogin} />
           </Route>
           <Route path="/getTip">
             <GetTip getEmailFromLogin={getEmailFromLogin} />
@@ -70,25 +67,16 @@ function App() {
             <Register />
           </Route>
           <Route path="/interaction">
-            <Interaction
-              loggedIn={loggedIn}
-              getEmailFromLogin={getEmailFromLogin}
-            />
+            <Interaction getEmailFromLogin={getEmailFromLogin} />
           </Route>
           <Route path="/icebreaker">
-            <Icebreakers
-              loggedIn={loggedIn}
-              getEmailFromLogin={getEmailFromLogin}
-            />
+            <Icebreakers getEmailFromLogin={getEmailFromLogin} />
           </Route>
           <Route path="/getTip">
-            <GetTip loggedIn={loggedIn} getEmailFromLogin={getEmailFromLogin} />
+            <GetTip getEmailFromLogin={getEmailFromLogin} />
           </Route>
           <Route path="/">
-            <Homepage
-              loggedIn={loggedIn}
-              getEmailFromLogin={getEmailFromLogin}
-            />
+            <Homepage getEmailFromLogin={getEmailFromLogin} />
           </Route>
         </Switch>
       </div>

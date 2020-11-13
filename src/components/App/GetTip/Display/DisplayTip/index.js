@@ -5,7 +5,6 @@ function DisplayTip({ tip }) {
   const [value, setValue] = useState(tip);
 
   useEffect(() => {
-    console.log(tip);
     setValue(tip);
   }, [tip]);
 
