@@ -21,6 +21,8 @@ function Header({ loggedIn }) {
         <NavLink to="/register">Register</NavLink> */}
         <NavLink to="/intro">Introduction</NavLink>
         &nbsp;
+        <NavLink to="/icebreaker">IceBreaker</NavLink>
+        &nbsp;
         <NavLink to="/interaction">Your sessions</NavLink>
         &nbsp;
         <NavLink to="/GetTip">Tips</NavLink>
