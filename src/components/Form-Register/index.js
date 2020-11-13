@@ -59,7 +59,7 @@ function Register() {
   }
 
   return (
-    <div>
+    <div className="registerAndLogInWrapper">
       <img
         src="/images/plusMentor/plusMentor_gradient_homepage.png"
         alt="plusMentor Logo"
@@ -140,11 +140,13 @@ function Register() {
           </div>
           <br />
           <div className="formButtonsContainer">
-            <a href="/" id="logIn" className="button is-primary is-medium">
+            <a href="/" id="backButton" className="button is-light is-medium">
               ⏪ Back
             </a>
             <span> </span>
-            <button className="button is-primary is-medium">Register</button>
+            <button id="nextButton" className="button is-primary is-large">
+              Register ⏩
+            </button>
           </div>
         </form>
       </main>

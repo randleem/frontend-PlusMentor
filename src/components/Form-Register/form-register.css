@@ -27,3 +27,7 @@ label[for="Bootcamper"],
 label[for="Mentor"] {
   font-size: 1.3em;
 }
+
+#backButton {
+  margin: 4px 6px;
+}

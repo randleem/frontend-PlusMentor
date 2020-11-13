@@ -9,6 +9,7 @@ function Homepage() {
         width="600"
       />
       <br />
+      <br />
       <a
         href="/register"
         id="signUp"
@@ -16,7 +17,7 @@ function Homepage() {
       >
         Create an account
       </a>
-      <br />
+      <div className="buttonDivider">&nbsp;</div>
       <a
         href="/login"
         id="logIn"

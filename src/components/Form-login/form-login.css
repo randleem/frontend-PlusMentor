@@ -14,3 +14,7 @@
   margin: 0 auto;
   text-align: center;
 }
+
+#backButton {
+  margin: 4px 6px;
+}

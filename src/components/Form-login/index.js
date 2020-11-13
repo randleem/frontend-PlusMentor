@@ -56,7 +56,7 @@ function Login({ getEmailFromLogin }) {
   }
 
   return (
-    <div>
+    <div className="registerAndLogInWrapper">
       <img
         src="/images/plusMentor/plusMentor_gradient_homepage.png"
         alt="plusMentor Logo"
@@ -91,11 +91,13 @@ function Login({ getEmailFromLogin }) {
           <br />
 
           <div className="formButtonsContainer">
-            <a href="/" id="log In" className="button is-primary is-medium">
+            <a href="/" id="backButton" className="button is-light is-medium">
               ⏪ Back
             </a>
             <span> </span>
-            <button className="button is-primary is-medium">Log In</button>
+            <button id="nextButton" className="button is-primary is-large">
+              Log In ⏩
+            </button>
           </div>
         </form>
       </main>

@@ -12,6 +12,20 @@ body {
   text-align: center;
 }
 
+/*—————————— HOMEPAGE ——————————*/
+.homePageWrapper {
+  padding-top: 400px !important;
+}
+
+.buttonDivider {
+  height: 13px;
+}
+
+/*—————————— REGISTER / LOGIN ——————————*/
+.registerAndLogInWrapper {
+  padding-top: 200px !important;
+}
+
 /*—————————— MAIN CONTENT ——————————*/
 main {
   text-align: left;
