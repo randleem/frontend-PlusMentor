@@ -14,7 +14,7 @@ function DisplayTip({ tip }) {
         <div className="content tile is-child box">
           <div className="card  ">
             <header className="card-header">
-              <p className="card-header-title">Tip:</p>
+              <p className="card-header-title">Talking point ideas:</p>
               <i className="fas fa-angle-down" aria-hidden="true"></i>
             </header>
             <div className="card-content">

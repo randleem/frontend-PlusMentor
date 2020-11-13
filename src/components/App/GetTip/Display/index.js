@@ -4,7 +4,9 @@ import DisplayTip from "./DisplayTip";
 import Header from "../../Header";
 
 function MainTipComponentDiv() {
-  const [tip, setTip] = useState("Your tips will be displayed here!");
+  const [tip, setTip] = useState(
+    `Click the "Get talking point" button to get inspiration for what to talk to your mentor about!`
+  );
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {

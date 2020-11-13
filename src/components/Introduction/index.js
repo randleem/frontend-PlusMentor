@@ -5,7 +5,7 @@ import Header from "../App/Header";
 
 function Introduction({ loggedIn }) {
   const tipsForBootcampers = [
-    "Prepare a brief introduction about yourself - this can be as informal or informal as you like",
+    "Prepare a brief introduction about yourself - this can be as formal or as informal as you like",
     "Background: Describe your career history prior to the School of Code",
     "Background: Describe any relevent experience",
     "Background: Why you are on the School of Code?",

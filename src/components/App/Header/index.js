@@ -28,11 +28,11 @@ function Header() {
         <NavLink to="/register">Register</NavLink> */}
         <NavLink to="/intro">Introduction</NavLink>
         &nbsp;
-        <NavLink to="/icebreaker">IceBreaker</NavLink>
+        <NavLink to="/icebreaker">Icebreaker</NavLink>
+        &nbsp;
+        <NavLink to="/GetTip">Talking Points</NavLink>
         &nbsp;
         <NavLink to="/interaction">Your sessions</NavLink>
-        &nbsp;
-        <NavLink to="/GetTip">Tips</NavLink>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <p>{loggedIn}</p>
         <NavLink to="/">

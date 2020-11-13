@@ -108,7 +108,8 @@ function Interaction() {
     let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
     let yyyy = date.getFullYear();
     date = mm + "/" + dd + "/" + yyyy;
-    const newData = { ...newCard, [name]: value, date };
+    // TODO: Fix this feature
+    const newData = { ...newCard, [name]: value, date, team_id: 2 };
     setNewCard(newData);
   }
 
@@ -165,13 +166,13 @@ function Interaction() {
         <br />
         <button
           onClick={handleGetAllCardsClick}
-          className="button is-primary is-medium"
+          className="button is-info is-medium"
         >
-          Get All Cards
+          See All Cards
         </button>
         &nbsp;&nbsp;
-        <button onClick={dropClick} className="button is-primary is-medium">
-          Display Cards By Email
+        <button onClick={dropClick} className="button is-info is-medium">
+          See Your Cards
         </button>
         <br />
         <br />
