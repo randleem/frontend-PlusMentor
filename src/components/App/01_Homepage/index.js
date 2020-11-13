@@ -6,6 +6,7 @@ function Homepage() {
       <img
         src="/images/plusMentor/plusMentor_gradient_homepage.png"
         alt="plusMentor Logo"
+        className="animate-entrance"
         width="600"
       />
       <br />

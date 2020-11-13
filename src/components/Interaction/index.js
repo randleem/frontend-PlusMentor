@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import DisplayCard from "./DisplayCard";
 import Header from "../App/Header";
 
+import "./interaction.css";
+
 function Interaction({ loggedIn }) {
   const [displayCards, setDisplayCards] = useState([]);
   const [newCard, setNewCard] = useState({});
@@ -55,6 +57,15 @@ function Interaction({ loggedIn }) {
   // Post Card/Interaction
   useEffect(() => {
     if (submitCard) {
+      if (
+        newCard.discussion === "" ||
+        newCard.topic === "" ||
+        !("topic" in newCard) ||
+        !("discussion" in newCard)
+      ) {
+        console.log("Missing value.");
+        return;
+      }
       async function submitNewCard() {
         const requestOptions = {
           method: `POST`,
@@ -124,12 +135,17 @@ function Interaction({ loggedIn }) {
           <br />
           <label className="loginLabel">
             Discussion:
-            <input
+            <textarea
+              className="input"
+              name="discussion"
+              onChange={handleNewCard}
+            ></textarea>
+            {/* <input
               className="input"
               name="discussion"
               type="text"
               onChange={handleNewCard}
-            />
+            /> */}
           </label>
           <br />
           <br />
@@ -143,7 +159,7 @@ function Interaction({ loggedIn }) {
           onClick={handleGetAllCardsClick}
           className="button is-primary is-medium"
         >
-          Get All Cards
+          Get Your Cards
         </button>
         &nbsp;&nbsp;
         <div className="dropdown">
