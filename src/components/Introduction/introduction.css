@@ -39,3 +39,11 @@
 svg[role="img"] {
   display: none;
 }
+
+#introCardTitle {
+  font-size: 1.5rem !important;
+}
+
+#introCardParagraph {
+  font-size: 1.2rem !important;
+}

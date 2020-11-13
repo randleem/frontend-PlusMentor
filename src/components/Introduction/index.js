@@ -5,49 +5,26 @@ import Header from "../App/Header";
 
 function Introduction({ loggedIn }) {
   const tipsForBootcampers = [
-    "Mentors are an aid and support for you to use, not a cheat",
-    "Dont expect too much from your mentor (they are not Steve Jobs)",
-    "Ask your mentor if there is any work they reference (day to day in work or when building skills)",
-    "Don't be afraid to set boundaries (items you are comfortable to talk about, subjects you would rather avoid)",
-    "Ask about diversity in the workplace, how they tackle and overcome barriers",
-    "Respect confidentiality your mentor may tell you something in safety",
-    "Respect your mentor has their own life",
-    "Do not badger/pester/annoy your mentor (don't be a nob!)",
-    "Don't be afraid to set the pace of the contact at the beginning, your mentor may be new to mentoring and not want to overwhelm you",
-    "Don't be afraid to ask for your mentor to have a look at work you have done, they may offer advice on how to make it look more professional/industry standard",
-    "Don't judge the knowledge of your mentor, they may specialise in a certain area that may not interest you exactly, but they may have a story of how they ended up there",
-    "If you have solved something as a result of advice your Mentor gave you, show them",
-    "Give feedback to your mentor; it may help them with future mentees that they have",
+    "Prepare a brief introduction about yourself - this can be as informal or informal as you like",
+    "Background: Describe your career history prior to the School of Code",
+    "Background: Describe any relevent experience",
+    "Background: Why you are on the School of Code?",
+    "Background: Why you would like to get into the tech industry?",
+    "Email your mentor and introduce yourself",
+    "Write a list of questions you would like to ask your mentor",
+    "Arrange your first meeting be it by email, zoom, in person",
+    "Talking points: how often would you like to meet/talk to your mentor?",
+    "Talking points: See the ice breaker page for ice breaker questions",
+    "Talking points: See the tips page for mentoring tips or questions",
   ];
 
-  const tipsForMentors = [
-    "Work to promote Mentees independence and self reliance",
-    "If you face a problem, offer advice on how to understand the problem",
-    "Help to give tools/instruction/other work in order to tackle problems (don’t do it for them)",
-    "Don’t lie about your experience, training, certifications ,accreditations",
-    "Share how you have trained? Where did you start?",
-    "Don’t be misleading, and make false claims",
-    "Help your mentee by sharing your experience of working in a team",
-    "Don’t be afraid to set boundaries (things to talk about, things to steer clear of)",
-    "Talk about the variety of people you work with and how you break down barriers",
-    "Respect confidentiality - your mentee may tell you something in confidence",
-    "Respect that your mentee has their own life",
-    "Don’t pester/annoy/badger/ your mentee (don’t be a nob!)",
-    "Don’t be afraid to set the pace of contact at the beginning (mentee may be overwhelmed by the process)",
-    "Then let the mentee become more comfortable with contacting you",
-    "If your mentoring experience becomes worrying/uncomfortable, please get in touch with the SoC team",
-    "Don’t be too assertive or intrusive about seeing your mentees work - they may be shy!",
-    "Don’t be afraid to tell your mentees that you don’t know something - foster an “always learning” attitude",
-    "Help the mentee to realise that they can do it themselves (they have the potential and ability)",
-    "Give feedback to your mentee",
-  ];
   return (
     <div>
       <Header loggedIn={loggedIn} />
       <main>
         <div className="card animate-entrance">
           <header className="card-header">
-            <h1 className="card-header-title" id="">
+            <h1 className="card-header-title" id="introCardTitle">
               Welcome to plusMentor: The School of Code Mentoring App
             </h1>
             <i className="fas fa-angle-down" aria-hidden="true"></i>
@@ -59,7 +36,7 @@ function Introduction({ loggedIn }) {
                 src="https://d33wubrfki0l68.cloudfront.net/e6fddcbea146f91d2f3c160f7d56a9391a4740b0/4e758/static/logo-51c754388b198e5bbb0d08a971ebbfa2.png"
                 alt={`school of code logo`}
               />
-              <p>
+              <p id="introCardParagraph">
                 In the School of Code, mentoring is a professional partnership
                 between an experienced developer (the mentor) and a bootcamper
                 (the mentee). The goal is to develop your skills and knowledge
