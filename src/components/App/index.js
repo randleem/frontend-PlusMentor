@@ -24,6 +24,9 @@ import Introduction from "../Introduction";
 // Interaction
 import Interaction from "../Interaction";
 
+// Icebreakers
+import Icebreakers from "./Icebreakers";
+
 // ----------------------------------------
 
 // Main CSS
@@ -68,6 +71,12 @@ function App() {
           </Route>
           <Route path="/interaction">
             <Interaction
+              loggedIn={loggedIn}
+              getEmailFromLogin={getEmailFromLogin}
+            />
+          </Route>
+          <Route path="/icebreaker">
+            <Icebreakers
               loggedIn={loggedIn}
               getEmailFromLogin={getEmailFromLogin}
             />

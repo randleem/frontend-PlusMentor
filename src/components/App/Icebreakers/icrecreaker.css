@@ -1,29 +1,31 @@
-checkListPaper {
-    margin-top: 200px;
-    padding: 20px;
-    background: rgb(255, 255, 255) !important;
-    border-radius: 6px;
-  }
-  .checkListItem {
-    padding: 20px;
-    background: rgba(245, 245, 245, 1) !important;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    margin-top: 13px;
-  }
-  .marmite {
-    margin-top: 200px;
-    padding: 20px;
-    background: rgb(255, 255, 255) !important;
-    border-radius: 6px;
-  }
-  .welcome {
-    width: 90% !important;
-  }
-  #school-of-code-logo {
-    float: left !important;
-  }
-  #welocme-box {
-    width: 75% !important;
-    float: right !important;
-  }
+/*—————————— ICEBREAKERS ——————————*/
+.icebreakerPaper {
+  margin-top: 20px !important;
+  padding: 20px;
+  background: rgb(255, 255, 255) !important;
+  border-radius: 6px;
+}
+
+.checkListItem {
+  padding: 20px;
+  background: rgba(245, 245, 245, 1) !important;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  margin-top: 13px;
+}
+.marmite {
+  margin-top: 200px;
+  padding: 20px;
+  background: rgb(255, 255, 255) !important;
+  border-radius: 6px;
+}
+.welcome {
+  width: 90% !important;
+}
+#school-of-code-logo {
+  float: left !important;
+}
+#welocme-box {
+  width: 75% !important;
+  float: right !important;
+}
