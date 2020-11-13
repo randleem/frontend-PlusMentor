@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+// Main CSS
 
 function DisplayTip({ tip }) {
   const [value, setValue] = useState(tip);
@@ -9,28 +10,33 @@ function DisplayTip({ tip }) {
   }, [tip]);
 
   return (
-    <div className="card animate-entrance">
-      <header className="card-header">
-        <p className="card-header-title">Tip:</p>
-        <span className="icon">
-          <i className="fas fa-angle-down" aria-hidden="true"></i>
-        </span>
-      </header>
-      <div className="card-content">
-        <div className="content">
-          {tip}
-          <br />
-          {/* <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> */}
+    <div className="tile is-ancestor">
+      <div className="tile">
+        <div className="tile is-parent">
+          <div className="content tile is-child box">
+            <div className="card animate-entrance">
+              <header className="card-header">
+                <p className="card-header-title">Tip:</p>
+                <i className="fas fa-angle-down" aria-hidden="true"></i>
+              </header>
+              <div className="card-content">
+                <div className="content">
+                  {tip}
+                  <br />
+                </div>
+              </div>
+              <footer className="card-footer">
+                <a href="#like" alt="Dislike" className="card-footer-item">
+                  👎
+                </a>
+                <a href="#like" alt="Like" className="card-footer-item">
+                  😍
+                </a>
+              </footer>
+            </div>
+          </div>
         </div>
       </div>
-      <footer className="card-footer">
-        <a href="#like" alt="Dislike" className="card-footer-item">
-          👎
-        </a>
-        <a href="#like" alt="Like" className="card-footer-item">
-          😍
-        </a>
-      </footer>
     </div>
   );
 }
