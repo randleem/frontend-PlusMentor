@@ -10,30 +10,28 @@ function DisplayTip({ tip }) {
   }, [tip]);
 
   return (
-    <div className="tile is-ancestor">
-      <div className="tile">
-        <div className="tile is-parent">
-          <div className="content tile is-child box">
-            <div className="card animate-entrance">
-              <header className="card-header">
-                <p className="card-header-title">Tip:</p>
-                <i className="fas fa-angle-down" aria-hidden="true"></i>
-              </header>
-              <div className="card-content">
-                <div className="content">
-                  {tip}
-                  <br />
-                </div>
+    <div className="tile animate-entrance">
+      <div className="tile is-parent">
+        <div className="content tile is-child box">
+          <div className="card  ">
+            <header className="card-header">
+              <p className="card-header-title">Tip:</p>
+              <i className="fas fa-angle-down" aria-hidden="true"></i>
+            </header>
+            <div className="card-content">
+              <div className="content">
+                {tip}
+                <br />
               </div>
-              <footer className="card-footer">
-                <a href="#like" alt="Dislike" className="card-footer-item">
-                  👎
-                </a>
-                <a href="#like" alt="Like" className="card-footer-item">
-                  😍
-                </a>
-              </footer>
             </div>
+            <footer className="card-footer">
+              <a href="#like" alt="Dislike" className="card-footer-item">
+                👎
+              </a>
+              <a href="#like" alt="Like" className="card-footer-item">
+                😍
+              </a>
+            </footer>
           </div>
         </div>
       </div>

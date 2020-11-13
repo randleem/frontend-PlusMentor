@@ -159,51 +159,15 @@ function Interaction({ loggedIn }) {
           onClick={handleGetAllCardsClick}
           className="button is-primary is-medium"
         >
-          Get Your Cards
+          Get All Cards
         </button>
         &nbsp;&nbsp;
-        <div className="dropdown">
-          <div className="dropdown-trigger">
-            <button
-              onClick={dropClick}
-              className="button is-primary is-medium"
-              aria-haspopup="true"
-              aria-controls="dropdown-menu"
-            >
-              <span>Display Cards By Email</span>
-              <span className="icon is-small">
-                <i className="fas fa-angle-down" aria-hidden="true"></i>
-              </span>
-            </button>
-          </div>
-          <div className="dropdown-menu" id="dropdown-menu" role="menu">
-            <div className="dropdown-content">
-              <div className="dropdown-item">
-                <p onClick={dropClick} className="dropdown-item" id="date">
-                  Date
-                </p>
-              </div>
-              <div className="dropdown-item">
-                <p onClick={dropClick} className="dropdown-item" id="topic">
-                  Topic
-                </p>
-              </div>
-              <div className="dropdown-item">
-                <p
-                  onClick={dropClick}
-                  className="dropdown-item"
-                  id="discussion"
-                >
-                  Discussion
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <button onClick={dropClick} className="button is-primary is-medium">
+          Display Cards By Email
+        </button>
         <br />
         <br />
-        <br />
-        <div className="tile is-ancestor">
+        <div className="displayCardContainer">
           {displayCards.map((card) => {
             return <DisplayCard card={card} key={card.interaction_id} />;
           })}

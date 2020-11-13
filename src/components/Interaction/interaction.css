@@ -2,3 +2,21 @@
 textarea {
   height: 200px !important;
 }
+
+.displayCardContainer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap !important;
+  justify-content: flex-start;
+}
+
+.singleDisplayCard {
+  margin: 10px !important;
+  max-width: 285px;
+  align-self: auto;
+  display: flex !important;
+}
