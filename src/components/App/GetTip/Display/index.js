@@ -12,10 +12,13 @@ function MainTipComponentDiv() {
   useEffect(() => {
     if (clicked) {
       async function getTip() {
-        const res = await fetch(`http://localhost:5000/randomTip/randomTip`, {
-          credentials: "include",
-          headers: { accept: "application/json" },
-        });
+        const res = await fetch(
+          `http://the-jkrs.herokuapp.com/randomTip/randomTip`,
+          {
+            credentials: "include",
+            headers: { accept: "application/json" },
+          }
+        );
 
         const { data, success } = await res.json();
         if (success) {

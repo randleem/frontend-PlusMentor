@@ -25,9 +25,9 @@ function Login({ getEmailFromLogin }) {
         console.log(login.password);
 
         console.log(btoa(login.email + ":" + login.password));
-        const res = await fetch(`http://localhost:5000/`, {
+        const res = await fetch(`http://the-jkrs.herokuapp.com/`, {
           credentials: "include",
-          cache: "no-cache",
+
           headers: {
             accept: "application/json",
             // capital A for Authorization
