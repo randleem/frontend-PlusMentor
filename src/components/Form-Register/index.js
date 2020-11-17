@@ -24,7 +24,7 @@ function Register() {
         };
 
         const req = await fetch(
-          `http://the-jkrs.herokuapp.com/register`,
+          `https://the-jkrs.herokuapp.com/register`,
           requestOptions
         );
         const data = await req.json();

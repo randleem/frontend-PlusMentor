@@ -13,7 +13,7 @@ function MainTipComponentDiv() {
     if (clicked) {
       async function getTip() {
         const res = await fetch(
-          `http://the-jkrs.herokuapp.com/randomTip/randomTip`,
+          `https://the-jkrs.herokuapp.com/randomTip/randomTip`,
           {
             credentials: "include",
             headers: { accept: "application/json" },

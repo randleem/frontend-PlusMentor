@@ -26,7 +26,7 @@ function Interaction() {
   useEffect(() => {
     if (allCardsClicked) {
       async function getAllDisplayCards() {
-        const res = await fetch(`http://the-jkrs.herokuapp.com/interaction`, {
+        const res = await fetch(`https://the-jkrs.herokuapp.com/interaction`, {
           credentials: "include",
           headers: { accept: "application/json" },
         });
@@ -46,7 +46,7 @@ function Interaction() {
     if (submitDisplayCardBy) {
       async function getDisplayCardsBy() {
         const res = await fetch(
-          `http://the-jkrs.herokuapp.com/interaction?email=${loggedIn}`,
+          `https://the-jkrs.herokuapp.com/interaction?email=${loggedIn}`,
           {
             credentials: "include",
             headers: { accept: "application/json" },
@@ -85,7 +85,7 @@ function Interaction() {
         };
 
         const req = await fetch(
-          `http://the-jkrs.herokuapp.com/interaction`,
+          `https://the-jkrs.herokuapp.com/interaction`,
           requestOptions
         );
         const data = await req.json();

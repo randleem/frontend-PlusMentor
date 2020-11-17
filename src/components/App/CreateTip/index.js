@@ -24,7 +24,7 @@ function Input() {
         };
 
         const req = await fetch(
-          `http://the-jkrs.herokuapp.com/createTip`,
+          `https://the-jkrs.herokuapp.com/createTip`,
           requestOptions
         );
         const data = await req.json();
